@@ -3,12 +3,9 @@
 To simulate a scenario of deadlock in concurrent execution of transactions. &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   **DATE :** 10.10.2023  
 ### PROCEDURE:
 1. Create a accounts table with the schema Acnts(accid INT PRIMARY KEY,balance DECIMAL(10, 2)).
-2. Insert the values in the accounts table.
-3. Cteate a transaction T1 and T2.
-4. T1 updates the balance by debiting 200.
-5. Simulate a delay and make T2 inteferes T1.
-6. T2 updates balance by debiting 150.
-7. Simulate a delay and make T1 inteferes T2.
+2. Insert the values in the accounts table. Cteate a transaction T1 and T2.
+3. T1 updates the balance by debiting 200. Simulate a delay and make T2 inteferes T1.
+4.  T2 updates balance by debiting 150. Simulate a delay and make T1 inteferes T2.
 
 
 <table>
@@ -44,6 +41,8 @@ INSERT INTO Acnts VALUES(2, 2500.00);
 <div align=left>
   
 ### Transaction T1
+
+
 ```sql
 BEGIN TRANSACTION;
 UPDATE Acnts
@@ -62,7 +61,7 @@ COMMIT;
 <th>
 <div align=left>
   
-### Transaction T2
+### Transaction T2:
 ```sql
 BEGIN TRANSACTION;
 UPDATE Acnts
